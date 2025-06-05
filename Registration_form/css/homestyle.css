@@ -1,0 +1,54 @@
+/* Global styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Home container */
+.home-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3%;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 40%;
+}
+
+/* Buttons */
+.button-group button {
+  padding: 1.5% 2%;
+  margin: 2%;
+  font-size: 1.4vw;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Yes button */
+.yes-btn {
+  background: linear-gradient(to right, #28a745, #218838);
+  color: white;
+  font-weight: bold;
+}
+
+.yes-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 12px rgba(40, 167, 69, 0.5);
+}
+
+/* No button */
+.no-btn {
+  background: linear-gradient(to right, #dc3545, #c82333);
+  color: white;
+  font-weight: bold;
+}
+
+.no-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 12px rgba(220, 53, 69, 0.5);
+}
