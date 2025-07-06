@@ -1,0 +1,153 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.8s ease-in-out;
+}
+
+/* Default Theme */
+body.deepblue {
+  background: linear-gradient(45deg, #0f4c75, #3282b8);
+  animation: backgroundPulse 6s infinite alternate ease-in-out;
+}
+
+/* Sunrise Theme */
+body.sunrise {
+  background: linear-gradient(45deg, #FF6E7F, #BFE9FF);
+  animation: sunrisePulse 6s infinite alternate ease-in-out;
+}
+
+/* Container + Layout */
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 480px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Heading */
+h1 {
+  font-size: 2em;
+  color: #bbe1fa;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInTitle 1.4s ease forwards;
+}
+
+/* Buttons */
+.cool-button,
+.toggle-theme {
+  padding: 14px 30px;
+  font-size: 1.1em;
+  margin: 12px auto;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  color: #0f4c75;
+  background-color: #bbe1fa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cool-button:hover,
+.toggle-theme:hover {
+  background-color: #0f4c75;
+  color: #bbe1fa;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Count */
+.click-count {
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Toast Popup */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+/* Sunrise Text Overrides */
+body.sunrise h1,
+body.sunrise .click-count {
+  color: #222;
+}
+
+body.sunrise .cool-button,
+body.sunrise .toggle-theme {
+  color: #222;
+  background-color: #fff;
+}
+
+body.sunrise .cool-button:hover,
+body.sunrise .toggle-theme:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes backgroundPulse {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.3); }
+}
+
+@keyframes sunrisePulse {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
