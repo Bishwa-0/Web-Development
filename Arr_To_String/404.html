@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Page Not Found</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(-45deg, #f5f6fa, #dcdde1, #bdc3c7, #ced6e0);
+      background-size: 400% 400%;
+      animation: bgFlow 16s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2f3542;
+    }
+
+    @keyframes bgFlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      max-width: 500px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #2f3542, #57606f, #7f8fa6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colorShift 8s ease infinite;
+    }
+
+    @keyframes colorShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #57606f;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 24px;
+      font-size: 1em;
+      color: #fff;
+      background: linear-gradient(90deg, #7f8fa6, #95a5a6);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #57606f, #2f3542);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Oops! Page Not Found</h1>
+  <p>Sorry, the page you're looking for either moved or doesn't exist anymore.</p>
+  <button onclick="goHome()">Go to Homepage</button>
+</div>
+
+<script>
+  function goHome() {
+    window.location.href = '/';
+  }
+</script>
+</body>
+</html>
