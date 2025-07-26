@@ -1,0 +1,88 @@
+1. Stage and commit all changes
+When I’ve modified multiple files and want to save everything:
+
+    git add .
+    git commit -m "Write a meaningful message here"
+
+
+2. Committed to the wrong branch? Fix it
+Oops — wrong branch. I move the commits like this:
+
+    git checkout -b correct-branch
+
+Now the commits are on the new branch. To remove them from the wrong one:
+
+    git checkout wrong-branch
+    git reset --hard HEAD~1
+
+Adjust ~1 if there are multiple wrong commits.
+
+
+3. Create a new branch and push to GitHub
+To work on something new:
+
+    git checkout -b feature-branch
+
+Then after editing:
+
+    git add .
+    git commit -m "Add my feature"
+    git push -u origin feature-branch
+
+
+4. Contribute to an open-source project
+Here’s my usual flow:
+
+1. Fork the repo on GitHub.
+2. Clone it locally:
+       git clone https://github.com/Bishwa-0/Counter_App.git
+       cd Counter_App
+3. Create a branch:
+       git checkout -b improvement
+4. Make changes, commit, push, and open a pull request on GitHub.
+
+
+5. Resolve merge conflicts in a team project
+First, get the latest main:
+
+    git checkout main
+    git pull origin main
+
+Merge it into my branch:
+
+    git checkout my-branch
+    git merge main
+
+If there's a conflict, I open the file, fix the issue, then:
+
+    git add .
+    git commit -m "Fix merge conflicts"
+
+
+6. Create a feature branch based on the latest main
+Start fresh from the updated main branch:
+
+    git checkout main
+    git pull origin main
+    git checkout -b new-feature
+
+Now I’m working with the latest changes already included.
+
+
+7. Revert to a specific commit and discard newer ones
+If something broke and I want to go back:
+
+    git log     # Copy the commit hash I want
+    git reset --hard <commit_hash>
+
+This completely discards all commits after that point.
+
+
+8. Restore a deleted file after committing
+If I accidentally deleted a file and committed it:
+
+    git checkout HEAD~1 -- path/to/file
+    git add path/to/file
+    git commit -m "Bring back the deleted file"
+
+File restored. Crisis averted.
